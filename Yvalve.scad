@@ -255,8 +255,8 @@ module Handle() {
   }
 }
 
-//InternalThread();
-ExternalThread();
+InternalThread();
+//ExternalThread();
 //MainBody();
 //Gate();
 //GateFixture();
