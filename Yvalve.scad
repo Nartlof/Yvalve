@@ -1,6 +1,6 @@
 use <threads.scad>
 
-MainThread = 47; // Rosca de 1 1/2 polegada
+MainThread = 47.8; // Rosca de 1 1/2 polegada
 StepThread = 2.3;
 Gap = 0.25;
 Thickness = 3;
@@ -26,7 +26,8 @@ echo(PipeLigth);
 $fa = $preview ? $fa : 1;
 $fs = $preview ? $fs : .2;
 
-module InternalThread() {
+module InternalThread() // make me
+{
   HexNutDiameter = 2 * sqrt(3) * ExternalDiameter / 3;
   FillamentD = 2;
   HoleDist = sqrt(3) * (FillamentD + 1) / 3;
@@ -78,7 +79,8 @@ module ExternalThread() // make me
   }
 }
 
-module MainBody() {
+module MainBody() // make me
+{
   difference() {
     union() {
       //Braços do Y
@@ -130,7 +132,8 @@ module FlowChannel() {
   }
 }
 
-module Gate() {
+module Gate() // make me
+{
   AxisLegth = GateHeight; //Confirmar depois
   difference() {
     union() {
@@ -172,7 +175,8 @@ module LimetMainBody() {
     }
 }
 
-module CommandAxis() {
+module CommandAxis() // make me
+{
   CommandAxisLenght = BodyDiameter / 2 + Thickness + 2 + HandleThickness;
   difference() {
     cylinder(d=CommandAxisDiamenter, h=CommandAxisLenght, $fn=6);
@@ -183,7 +187,8 @@ module CommandAxis() {
   }
 }
 
-module CommandAxisRing(gap = 0) {
+module CommandAxisRing(gap = 0) // make me
+{
   RingHeight = (BodyDiameter - GateHeight) / 2 + Thickness + gap;
   difference() {
     union() {
@@ -197,7 +202,8 @@ module CommandAxisRing(gap = 0) {
   }
 }
 
-module GateFixture() {
+module GateFixture() // make me
+{
   TL = (BodyDiameter - GateHeight) / 2;
   difference() {
     union() {
@@ -218,7 +224,8 @@ module GateFixture() {
   }
 }
 
-module Handle() {
+module Handle() // make me
+{
   SmoothDiameter = 4;
   difference() {
     minkowski() {
