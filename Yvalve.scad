@@ -187,7 +187,7 @@ module CommandAxis() // make me
   }
 }
 
-module CommandAxisRing(gap = 0) // make me
+module CommandAxisRing(gap = 0) 
 {
   RingHeight = (BodyDiameter - GateHeight) / 2 + Thickness + gap;
   difference() {
@@ -200,6 +200,11 @@ module CommandAxisRing(gap = 0) // make me
         cylinder(d=CommandAxisDiamenter + Gap, h=RingHeight + 2, $fn=6);
     }
   }
+}
+
+module commandAxisRing() // make me
+{
+  CommandAxisRing();
 }
 
 module GateFixture() // make me
@@ -262,7 +267,7 @@ module Handle() // make me
   }
 }
 
-InternalThread();
+//InternalThread();
 //ExternalThread();
 //MainBody();
 //Gate();
